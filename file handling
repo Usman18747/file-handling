@@ -1,0 +1,32 @@
+#include<iostream>
+#include<fstream>
+#include<iomanip>
+#include<string>
+using namespace std;
+int main()
+{
+	/*string information;
+	cout<<"Enter the information you wants to enter"<<endl;
+	getline(cin, information);
+	ofstream billa("student_info.txt");
+	billa <<information;
+	billa.close();*/
+	/*string information;
+	ifstream billa("student_info.txt");
+	getline(billa, information);
+	cout <<"You entered " <<information;
+	billa.close();*/
+	ifstream billa("student_info.txt");
+	if (!billa) {
+		cout << "You did not saved it successfully";
+		return 1;
+	}
+	string line;
+	while(getline(billa,line))
+	{
+		cout << line << endl;
+	}
+	billa.close();
+	return 0;
+
+}
